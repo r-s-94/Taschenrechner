@@ -118,8 +118,8 @@
 
     <script>
       let sessionResulte = "";
-      let prevValue = 0;
-      let currentValue = 0;
+      let prevValue = "";
+      let currentValue = "";
       let arithmeticSymbol = "";
       let calculateResult = 0;
       let text = "";
@@ -130,6 +130,11 @@
         sessionResulte += String(number);
         console.log(sessionResulte);
         showSessionResult();
+
+        if (prevValue !== "" && currentValue !== "") {
+          showCalculateResult();
+          //cleanShowCalculateResult();
+        }
 
         //x += number;
         //x * 10;
@@ -176,7 +181,8 @@
           console.log(sessionResulte);
           showSessionResult();
           prevValue = currentValue;
-          currentValue = 0;
+
+          currentValue = "";
         }
 
         if (arithmeticOperator === " - ") {
@@ -185,7 +191,7 @@
           console.log(sessionResulte);
           showSessionResult();
           prevValue = currentValue;
-          currentValue = 0;
+          currentValue = "";
         }
 
         if (arithmeticOperator === " * ") {
@@ -194,7 +200,7 @@
           console.log(sessionResulte);
           showSessionResult();
           prevValue = currentValue;
-          currentValue = 0;
+          currentValue = "";
         }
 
         if (arithmeticOperator === " / ") {
@@ -203,7 +209,7 @@
           console.log(sessionResulte);
           showSessionResult();
           prevValue = currentValue;
-          currentValue = 0;
+          currentValue = "";
         }
       }
 
@@ -244,8 +250,8 @@
 
       function cleanShowCalculateResult() {
         sessionResulte = "";
-        prevValue = 0;
-        currentValue = 0;
+        prevValue = "";
+        currentValue = "";
         arithmeticSymbol = "";
         calculateResult = 0;
 
